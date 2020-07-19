@@ -10,8 +10,8 @@ namespace cosmos_sql
     {
         static string database = "appdb";
         static string containername = "customer";
-        static string endpoint = "https://appaccount4000.documents.azure.com:443/";
-        static string accountkeys = "zDVv6P9fb9LOEnmyvr756TFRMcpk2TB3kXAIgWnpIJui1ANnGFFq96QaGhmRKke81AbZqVklzx6jB2fEXIeSIA==";
+        static string endpoint = "https://appdb204.documents.azure.com:443/";
+        static string accountkeys = "BYuW8l00UlQeyAYtR6kNLMXfd6Zj2Coiphf4tMFqITx1kvcr4AcrzbUaMnfF3p7ejM9sMbXtjTUnU9eTfjL7jQ==";
 
         static async Task Main(string[] args)
         {
@@ -54,7 +54,7 @@ namespace cosmos_sql
                 Container container_conn = db_conn.GetContainer(containername);
 
                 PartitionKey pk = new PartitionKey("Miami");
-                string id = "9b464759-42d3-4a10-b55a-e1e46ef487e0";
+                string id = "2571b79a-297a-428a-bdcb-6bf5ef71454b";
 
                 ItemResponse<customer> response = await container_conn.ReadItemAsync<customer>(id, pk);
                 customer customer_obj = response.Resource;
